@@ -1,0 +1,43 @@
+.container {
+  display:flex;
+  flex-direction:row;
+}
+.container > div {
+
+	margin:auto;
+
+}
+.arrow-box {
+      width: 128px;
+      height: 50px;
+      background-color: #9999ff;
+
+      border-top: 25px solid #ffffff;
+      position: relative;
+}
+.arrow-box:after {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 128px;
+      width: 0;
+      height: 0;
+      border: 25px solid transparent;
+      border-left: 12px solid #9999ff;
+
+
+      border-top: 25px solid #ffffff;
+}
+.arrow-box:before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: 129px;
+      width: 0;
+      height: 0;
+      border: 25px solid transparent;
+      border-left: 12px solid #999;
+      
+
+      border-top: 25px solid #ffffff;
+}
