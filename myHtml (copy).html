@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html id="page">
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script type="text/javascript" src="http://mbostock.github.com/d3/d3.js"></script>
+<script src="MyScript.js"></script>
+<script src="MyDirective.js"></script>
+</head>
+
+<body>
+<link rel="stylesheet" href="MyCSS.css">
+<link rel="stylesheet" href="brackets.css">
+<div id="container" ng-app="MyApp" ng-controller="driversController">
+  	<div>Looping with ng-repeat:</div>
+	<ul>
+	    <li ng-repeat="x in rounds">
+	      {{ x }}
+	    </li>
+	</ul>
+	
+
+	<br/>
+	
+		<div id="ElementPane" class="container">
+			<div ng-repeat="x in rounds">
+				<br/>
+					<div id="{{y.id}}" class="arrow-box-{{x.round_id}}
+					" ng-click="myfunction($event)" ng-repeat="y in x.matches">
+					{{y.id}}
+						<div ng-class-even="'line-top-{{x.round_id}}'">
+							<div ng-class-even="'line-{{x.round_id}}'">
+
+							</div>
+						</div>
+
+					</div>	
+				<br/>
+			</div>
+
+		</div>
+
+<!-- 	<div id="svgParent" ng-repeat="lines in lineList">
+		<svg id="line_{{lines.id}}" ng-attr-height={{svgHeight}} ng-attr-width={{svgWidth}>}
+			<g ng-cloak>
+				<line ng-attr-x1={{lines.x1}} ng-attr-y1={{lines.y1}} ng-attr-x2={{lines.x2}} ng-attr-y2={{lines.y2}} style="stroke:rgb(255,0,0);stroke-width:3"/>
+			</g>
+		</svg>
+	</div>  -->
+</div>
+
+</body>
+</html>
+<!--9999ff-->

@@ -2,66 +2,30 @@
 <html>
 <head>
 <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
 <script src="MyScript.js"></script>
+<script src="MyDirective.js"></script>
 </head>
+
 <body>
 <link rel="stylesheet" href="MyCSS.css">
 <link rel="stylesheet" href="brackets.css">
-<link rel="stylesheet" href="jsPlumb-2.0.7-min.js">
+<div id="container" ng-app="MyApp" ng-controller="driversController">
+  	<div>Looping with ng-repeat:</div>
+	<ul>
+	    <li ng-repeat="x in rounds">
+	      {{ x }}
+	    </li>
+	</ul>
+	
 
-<!-- <div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div class="container">
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-<div id="arrow-box"></div>
-<br/>
-</div> -->
-<button id="myelementid" type="button">Button</button>
-<div ng-app="MyApp" ng-controller="driversController">
-  <div id="my_element">Looping with ng-repeat:</div>
-  <ul>
-    <li ng-repeat="x in rounds">
-      {{ x }}
-    </li>
-  </ul>
+	<br/>
+	
+		<div id="ElementPane" class="container">
 
-
-<br/>
-<div class="container">
-<div ng-repeat="x in rounds">
-<br/>
-<div id="{{y.id}}" class="arrow-box" ng-click="myfunction($event)" ng-repeat="y in x.matches">{{y.id}}</div>
-<br/>
+					<svg id="svg_container" width="3000px" height="6000px"></svg>
+		</div>
 </div>
-</div>
-</div>
-</div>
-
-<svg height="210" width="500">
-  <line x1="0" y1="0" x2="200" y2="200" style="stroke:rgb(255,0,0);stroke-width:2" />
-  Sorry, your browser does not support inline SVG.
-</svg>
 
 </body>
 </html>
-<!--9999ff-->
