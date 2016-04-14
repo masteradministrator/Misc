@@ -65,3 +65,19 @@
                     },{
                         matches:[{id:'match1_round6'}], round_id:"6"
                     }]
+
+
+
+                        $scope.rounds = [{
+                        players:[{id:'player1_round1'},{id:'player2_round1'},{id:'player3_round1'},{id:'player4_round1'},{id:'player5_round1'},{id:'player6_round1'},{id:'player7_round1'},{id:'player8_round1'},{id:'player9_round1'},{id:'player10_round1'},{id:'player11_round1'},{id:'player12_round1'},{id:'player13_round1'},{id:'player14_round1'},{id:'player15_round1'},{id:'player16_round1'},{id:'player17_round1'},{id:'player18_round1'},{id:'player19_round1'},{id:'player20_round1'},{id:'player21_round1'},{id:'player22_round1'},{id:'player23_round1'},{id:'player24_round1'},{id:'player25_round1'},{id:'player26_round1'},{id:'player27_round1'},{id:'player28_round1'},{id:'player29_round1'},{id:'player30_round1'},{id:'player31_round1'},{id:'player32_round1'}], round_id:"1"
+                    },{
+                        players:[{id:'player1_round2'},{id:'player2_round2'},{id:'player3_round2'},{id:'player4_round2'},{id:'player5_round2'},{id:'player6_round2'},{id:'player7_round2'},{id:'player8_round2'},{id:'player9_round2'},{id:'player10_round2'},{id:'player11_round2'},{id:'player12_round2'},{id:'player13_round2'},{id:'player14_round2'},{id:'player15_round2'},{id:'player16_round2'}], round_id:"2"
+                    },{
+                        players:[{id:'player1_round3'},{id:'player2_round3'},{id:'player3_round3'},{id:'player4_round3'},{id:'player5_round3'},{id:'player6_round3'},{id:'player7_round3'},{id:'player8_round3'}], round_id:"3"
+                    },{
+                        players:[{id:'player1_round4'},{id:'player2_round4'},{id:'player3_round4'},{id:'player4_round4'}], round_id:"4"
+                    },{
+                        players:[{id:'player1_round5'},{id:'player2_round5'}], round_id:"5"
+                    },{
+                        players:[{id:'player1_round6'}], round_id:"6"
+                    }];
