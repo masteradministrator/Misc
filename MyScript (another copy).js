@@ -13,34 +13,6 @@ angular.module('MyApp', [])
                     },{
                         players:[{id:'player1_round6'}], round_id:"6"
                     }];
-
-    $scope.matchdetails = {
-                            "match_details":
-                            {
-                              "round_1":{},
-                              "round_2":{},
-                              "round_0":{
-                                          "1":{"opponent_2":"player 6","opponent_1":"player 1"},
-                                          "2":{"opponent_2":"player 3","opponent_1":"player 5"}
-                                        }
-                            },
-                            "bye_player_list":
-                            {
-                              "player04@gmail.com":"player 4",
-                              "player02@gmail.com":"player 2"
-                            }
-                          };
-
-   $scope.rounds = bracketGenHelper($scope.matchdetails);
-
-    console.log("result");
-    console.log(bracketGenHelper($scope.matchdetails));
-    console.log($scope.rounds);
-
-    console.log(Object.keys($scope.matchdetails.match_details).length);
-    console.log(Object.keys($scope.matchdetails.match_details)[0]);
-    console.log(Object.keys($scope.matchdetails.match_details["round_" + 0]).length);
-
     $scope.svg_width = $scope.rounds.length;
     $scope.svg_height = "";
     //console.log($scope.rounds[0]['players']);
@@ -213,6 +185,7 @@ angular.module('MyApp', [])
 
           //If nextlist has only one player(winner) then there is no need to plot the lines
           else{
+
             var rectangle = svgContainer.append("rect")
                             .attr("id", $scope.rounds[x]['players'][j]['id'])
                             .attr("x", levelAddX)
@@ -235,62 +208,4 @@ angular.module('MyApp', [])
         levelAddX = levelAddX + nextroundMarginX;
       }
     }
-function bracketGenHelper( matchdetails){
-  var matchObject = [];
-  var playerObject = [];
-  var playerObjectIndex = 0;
-  var x=0;
-    for(; x<Object.keys($scope.matchdetails.match_details).length;x++)
-    {
-        playerObject = [];
-        playerObjectIndex = 0;
-
-        if(x==0){
-
-          for(var y=1; y<=Object.keys($scope.matchdetails.match_details['round_'+x]).length;y++)
-          {
-            //console.log($scope.matchdetails.match_details['round_'+x]);
-            playerObject[playerObjectIndex] = {'id':$scope.matchdetails.match_details['round_'+x][y]["opponent_2"]};
-            playerObjectIndex++;
-            playerObject[playerObjectIndex] = {'id':$scope.matchdetails.match_details['round_'+x][y]["opponent_1"]};
-            playerObjectIndex++;
-          }
-
-          for(var key in $scope.matchdetails.bye_player_list)
-          {
-            playerObject[playerObjectIndex] = {'id':$scope.matchdetails.bye_player_list[key]};
-            playerObjectIndex++
-            playerObject[playerObjectIndex] = {'id':''};
-            playerObjectIndex++
-
-          }
-
-        }
-        else if(x>0 && Object.keys($scope.matchdetails.match_details['round_'+x]).length == 0){
-         for(var y=(Math.pow(2, (Object.keys($scope.matchdetails.match_details).length)-(x))); y>0;y--)
-          {
-            playerObject[playerObjectIndex] = {'id':''};
-            playerObjectIndex++
-
-          }
-        }
-        else
-        {
-
-          for(var y=1; y<=Object.keys($scope.matchdetails.match_details['round_'+x]).length;y++)
-          {
-
-            playerObject[playerObjectIndex] = {'id':$scope.matchdetails.match_details['round_'+x][y]["opponent_2"]};
-            playerObjectIndex++;
-            playerObject[playerObjectIndex] = {'id':$scope.matchdetails.match_details['round_'+x][y]["opponent_1"]};
-            playerObjectIndex++;
-          }
-        }
-        matchObject[x]={'round_id':x+1,'players':playerObject};
-    }
-    matchObject[x]={'round_id':x+1,'players':[{'id':''}]};
-  return matchObject;
-}
-
 });
-

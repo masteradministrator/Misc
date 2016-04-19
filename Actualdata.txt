@@ -1,0 +1,13 @@
+{
+ "byes_list": {
+   "player1@fydip.com": "Player 1",
+   "player4@fydip.com": "Player 4",
+   "player3@fydip.com": "Player 3"
+ },
+ "matches_list": {
+   "1": {
+     "opponent_2": "Player 5",
+     "opponent_1": "Player 2"
+   }
+ }
+}
